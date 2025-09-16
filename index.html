@@ -1,13 +1,18 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bree - Creative Developer</title>
-    <link rel="stylesheet" href="index.css">
+  <title>Bree Portfolio</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
 </head>
+</head>
+
 <body>
-  <!-- Navbar -->
+  <!-- Navigation -->
   <header>
     <div class="logo">Bree</div>
     <nav>
@@ -18,60 +23,127 @@
         <li><a href="#services">Services</a></li>
       </ul>
     </nav>
-    <button class="contact-btn" id="contactBtn">Contact me</button>
+    <div class="header-buttons">
+      <a href="#contact" class="btn btn-green">Contact me</a>
+      <button id="darkModeToggle" class="btn btn-darkmode">🌙</button>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <p>Available for work</p>
-      <h3>Creative Developer</h3>
-      <p>
-        Hello there, my name is Brenda Odayo. I am a creative developer
-        helping businesses thrive by creating visually stunning landing pages.
-        I am passionate about building websites that standout.
+  <section id="home" class="hero">
+    <div class="hero-text fade-in">
+      <p class="availability">Available for work</p>
+      <h1>Creative Developer</h1>
+      <p class="description">
+      I am a dedicated developer with a strong passion for creating efficient,<br>
+      user-focused applications.I enjoy solving complex problems through clean,<br>
+      maintainable code and continuously seek opportunities to learn and grow.<br>
+      I am always open to connecting, sharing ideas, and contributing to meaningful projects. 
+<h2>Passionate developer driven by curiosity, <br> creativity, and problem-solving.</h2>
       </p>
       <div class="buttons">
-        <button class="btn btn-green" onclick="scrollToSection('works')">View my works</button>
-        <button class="btn btn-light" id="resumeBtn">Resume</button>
+        <button id="viewWorks" class="btn btn-dark">View my works</button>
+        <button id="resumeBtn" class="btn btn-light">Resume</button>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="c:\Users\user\Downloads\freepik_assistant_1757256964936.png" alt="Laptop and workspace">
+    <div class="hero-image fade-in">
+      <img src="c:\Users\user\Desktop\render.png" alt="Laptop workspace">
     </div>
   </section>
 
-  <!-- Resume Modal -->
-  <div class="modal" id="resumeModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeResume">&times;</span>
-      <h2>Resume</h2>
-      <p>You can place your PDF link or detailed resume here.</p>
-      <a href="resume.pdf" target="_blank" class="btn btn-green">Download Resume</a>
+  <!-- Placeholder Sections -->
+  <section id="about" class="content">
+    <h2>About Me</h2>
+    <p>Hello! I'm Bree, a passionate developer dedicated to crafting innovative solutions that enhance user experiences.
+      With a strong foundation in both front-end and back-end technologies, I thrive on turning complex problems into
+      elegant, efficient code. My journey in tech is driven by curiosity and a commitment to continuous learning. When
+      I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or collaborating
+      with fellow developers. Let's connect and create something amazing together!</p>
+  </section>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>💻 Web Development</h3>
+        <p>I build responsive, modern websites using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="service-card">
+        <h3>🎨 UI/UX Design</h3>
+        <p>Designing user-friendly interfaces with clean and intuitive layouts.</p>
+      </div>
+      <div class="service-card">
+        <h3>⚡ Performance Optimization</h3>
+        <p>Optimizing websites for speed, SEO, and accessibility.</p>
+      </div>
+  
+  <section id="works" class="content">
+    <h2>My Works</h2>
+    <p>Portfolio projects will go here...
+
+    </p>
+  </section>
+
+  <section id="resume" class="content hidden">
+    <h2>Resume</h2>
+    <p>My resume details will go here...
+     CSS, HTML, JavaScript, React, Node.js, Express, MongoDB, Git, GitHub, RESTful APIs, Responsive Design,
+      Agile Methodologies, Problem-Solving Skills, Communication Skills, Team Collaboration, UI/UX Principles,
+      Testing and Debugging, Continuous Learning.
+
+    </p>
+    
+  </section>
+
+  <section id="contact" class="content">
+    <h2>Contact Me</h2>
+    <p>Let's collaborate! Reach out to me anytime.</p>
+    <form id="contactForm">
+      <input type="text" name="from_name" id="from_name" placeholder="Your Name" required>
+      <span class="error" id="nameError"></span>
+
+      <input type="email" name="reply_to" id="reply_to" placeholder="Your Email" required>
+      <span class="error" id="emailError"></span>
+
+      <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+      <span class="error" id="messageError"></span>
+
+      <button type="submit" id="submitBtn" class="btn btn-green" disabled>Send Message</button>
+    </form>
+
+    <p id="formStatus"></p>
+
+    <!-- Success/Error Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <p id="modalMessage"></p>
+      </div>
     </div>
-  </div>
 
-  <!-- Contact Modal -->
-  <div class="modal" id="contactModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeContact">&times;</span>
-      <h2>Contact Me</h2>
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+
+
+    <div class="social-icons">
+      <a href="https://github.com/BreeOD" target="_blank" class="social github">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/obrenda-j-b0048788" target="_blank" class="social linkedin">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://instagram.com/Odayo Brenda" target="_blank" class="social instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com/BrendaOdayo1" target="_blank" class="social twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <br>
+      <a href="mailto:obrenda.j@gmail.com" class="email-link">
+        <i class="fas fa-envelope"></i>
+
+
     </div>
-  </div>
+  </section>
 
-  <script src="index.js"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-
-
